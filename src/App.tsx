@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Sparkles, Calendar, ArrowRight, Leaf, Activity, ShieldCheck } from 'lucide-react'
+import { AssessmentFunnel } from './components/AssessmentFunnel'
 
 export default function App() {
   return (
@@ -99,6 +100,9 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* Trojan Horse Funnel */}
+      <AssessmentFunnel />
 
       {/* Services Section */}
       <section id="treatments" className="py-24 px-6 max-w-7xl mx-auto">
