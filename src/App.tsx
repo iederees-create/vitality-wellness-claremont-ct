@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Sparkles, Calendar, ArrowRight, Star, ChevronDown, Leaf, Activity, ShieldCheck } from 'lucide-react'
+import { Sparkles, Calendar, ArrowRight, Leaf, Activity, ShieldCheck } from 'lucide-react'
 
 export default function App() {
   return (
