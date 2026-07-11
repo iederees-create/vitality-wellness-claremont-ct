@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iederees-create.github.io/vitality-wellness-claremont-ct/sitemap.xml

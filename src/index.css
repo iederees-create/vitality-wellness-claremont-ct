@@ -2,8 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Theme palettes — CSS custom properties consumed by tailwind.config.js.
+  Values are space-separated "R G B" channels (not hex) so Tailwind's
+  opacity modifiers (e.g. `text-sage-900/70`) keep working. Swapping the
+  [data-theme] attribute on <html> (set by src/context/ThemeContext.tsx,
+  sourced from siteConfig.themes) re-colors every "sage-*" / "gold-*"
+  utility class site-wide. These values mirror siteConfig.themes and act
+  as a no-JS fallback; ThemeContext also sets them inline at runtime.
+*/
+:root,
+[data-theme='sageSerenity'] {
+  --color-bg: 253 251 247;
+  --color-bg-alt: 252 248 240;
+  --color-primary-50: 244 247 244;
+  --color-primary-100: 229 237 229;
+  --color-primary-500: 139 167 139;
+  --color-primary-900: 44 58 44;
+  --color-accent-500: 212 175 55;
+  --color-accent-600: 184 149 46;
+}
+
+[data-theme='champagneGlow'] {
+  --color-bg: 253 248 243;
+  --color-bg-alt: 248 237 224;
+  --color-primary-50: 247 240 233;
+  --color-primary-100: 239 224 210;
+  --color-primary-500: 185 138 94;
+  --color-primary-900: 74 53 36;
+  --color-accent-500: 214 138 138;
+  --color-accent-600: 191 111 111;
+}
+
+[data-theme='midnightBotanica'] {
+  --color-bg: 246 245 241;
+  --color-bg-alt: 238 236 228;
+  --color-primary-50: 236 238 233;
+  --color-primary-100: 217 221 208;
+  --color-primary-500: 63 91 68;
+  --color-primary-900: 28 42 30;
+  --color-accent-500: 168 135 63;
+  --color-accent-600: 143 113 52;
+}
+
+@layer base {
+  body {
+    background-color: rgb(var(--color-bg));
+  }
+
+  /* Visible focus state for keyboard users on every interactive element,
+     rather than relying on browser default outlines alone. */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
 @layer utilities {
   .glass {
     @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-sage-900 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg;
+  }
+
+  /* Small caption/badge used to visibly label demo/fictional content
+     (trust stats, testimonials, gallery placeholders, etc.) per the
+     template's compliance rules — never presented as real. */
+  .demo-badge {
+    @apply inline-block text-[10px] font-semibold uppercase tracking-wider text-sage-900/50 bg-sage-900/5 px-2 py-0.5 rounded-full;
+  }
+}
+
+/* Respect reduced-motion preferences: collapse large motion into a fade. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

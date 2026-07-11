@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdfbf7"/>
+      <stop offset="100%" stop-color="#e5ede5"/>
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8ba78b"/>
+      <stop offset="100%" stop-color="#d4af37"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg-grad)"/>
+  <circle cx="1020" cy="120" r="220" fill="#8ba78b" opacity="0.12"/>
+  <circle cx="140" cy="560" r="180" fill="#d4af37" opacity="0.1"/>
+  <path d="M150 300c30-40 70-60 110-60 40 0 70 40 70 80 0 40-30 70-70 90-40-20-70-50-70-90 0-20 5-40 -40 -20z" fill="none" stroke="url(#accent-grad)" stroke-width="3" transform="translate(0,-20)"/>
+  <text x="150" y="330" font-family="Georgia, 'Playfair Display', serif" font-size="72" font-weight="600" fill="#2c3a2c">Vitality Wellness</text>
+  <text x="150" y="390" font-family="Arial, sans-serif" font-size="30" fill="#4a4235">A calmer kind of glow, in the heart of Claremont</text>
+</svg>
